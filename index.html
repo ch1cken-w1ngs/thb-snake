@@ -6,16 +6,21 @@
             import kaboom from "https://unpkg.com/kaboom/dist/kaboom.mjs";
 
             var playerlength = 1;
+            let snake = []
             
             kaboom();
+            loadSprite("frodo", "Frodo.jpg");
 
-            const player = add([
+            for(let i = 1; i <= playerlength; i++){
+                let segment = add([
                 health(1),
-                loadSprite("frodo", "https://github.com/SpagettiFisch/thb-snake/blob/master/Frodo.jpg"),
+                sprite("frodo"),
                 area(),
                 pos(100, 100),
                 "snake"
-            ])
+                ])
+                snake.push(segment)
+                }
             
             onKeyPress("up",() => {
                 // Hier passiert jetzt etwas wie zum Beispiel:
