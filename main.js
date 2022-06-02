@@ -1,5 +1,4 @@
-import kaboom from "https://unpkg.com/kaboom/dist/kaboom.mjsj"
-
+import kaboom from "kaboom"
 // initialize context
 kaboom()
 
