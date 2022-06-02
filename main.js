@@ -13,7 +13,6 @@ add([
 	pos(80, 40),
 	area(),
 ])
-
 // add a kaboom on mouse click
 onClick(() => {
 	addKaboom(mousePos())
