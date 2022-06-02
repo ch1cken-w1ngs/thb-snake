@@ -1,15 +1,69 @@
-<script type="module">
+<html>
+    <head>
+        <style>
+        </style>
+        <script type="module">                  
+            import kaboom from "https://unpkg.com/kaboom/dist/kaboom.mjs";
 
-    // import kaboom lib
-    import kaboom from "https://unpkg.com/kaboom/dist/kaboom.mjs";
+            var playerlength = 1;
+            
+            kaboom();
+            
+            
+            const player = add([
+                health(1),
+                loadSprite("frodo", "Frodo.png"),
+                area(),
+                pos(100, 100),
+                color(255, 255, 255),
+                "player"
+            ])
+            
+            onCollide("player","border", (border) => {
+                destroy(player)
+                go("lose")
+
+            })
+
+            onCollide("player", "fruit", (fruit) => {
+                playerlength++
+            })
+            
+            addLevel([
+    "===============",
+    "=             =",
+    "=             =",
+    "=             =",
+    "=             =",
+    "=             =",
+    "=             =",
+    "=             =",
+    "=             =",
+    "=             =",
+    "=             =",
+    "=             =",
+    "=             =",
+    "=             =",
+    "==============="
+
+], {
+    width: 38,
+    height: 38,
     
-    // initialize kaboom context
-    kaboom();
-    
-    // add a piece of text at position (120, 80)
-    add([
-        text("hello world"),
-        pos(120, 80),
-    ]);
-    
-</script>
+    "=": () =>[
+    rect(50,50),
+    color(255,0,0),
+    area(),
+    "border"
+  ],
+})
+
+            
+            
+
+            </script>
+    </head>
+    <body>
+
+    </body>
+</html>
