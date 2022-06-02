@@ -19,6 +19,23 @@
                 "player"
             ])
             
+            onKeyPress("up",() => {
+                // Hier passiert jetzt etwas wie zum Beispiel:
+                player.move(0,-10)
+            })
+            onKeyPress("left",() => {
+                // Hier passiert jetzt etwas wie zum Beispiel:
+                player.move(0,-10)
+            })
+            onKeyPress("down",() => {
+                // Hier passiert jetzt etwas wie zum Beispiel:
+                player.move(0,-10)
+            })
+            onKeyPress("right",() => {
+                // Hier passiert jetzt etwas wie zum Beispiel:
+                player.move(0,-10)
+            })
+            
             onCollide("player","border", (border) => {
                 destroy(player)
                 go("lose")
@@ -28,6 +45,7 @@
             onCollide("player", "fruit", (fruit) => {
                 playerlength++
             })
+            
             
             addLevel([
     "===============",
