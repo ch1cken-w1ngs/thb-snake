@@ -39,6 +39,7 @@ onCollide("player","border", (border) => {
 onCollide("player", "fruit", (fruit) => {
     playerlength++
 })
+
 let fruit = add([
     color(0, 255, 0),
     rect(25, 25),
